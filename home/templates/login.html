@@ -1,0 +1,68 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ setting.company }}Login {% endblock %}
+{% block keywords %}{{ setting.keywords }}  {% endblock %}
+{% block description %} {{ setting.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+ <div id="contact-page" class="container">
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">Login Form</h2>
+
+
+						<div id="gmap" class="contact-map">
+							 <section id="form"><!--form-->
+									<div class="container">
+
+											<div class="col-sm-4 col-sm-offset-4">
+												{% if messages %}
+													{% for message in messages %}
+														<div class="alert alert-{{message.tags}}" role="alert" style="display: none">    </div>
+														{{ message }}
+
+													{% endfor %}
+												{% endif %}
+												<div class="login-form"><!--login form-->
+													<h2>Login to your account</h2>
+													<form action="" method="post">
+														{% csrf_token %}
+														<input class="input" name="username" type="text" placeholder="Username"  />
+														<input class="input" name="password" type="text" placeholder="Password" />
+														<span>
+															<input type="checkbox" class="checkbox">
+															Keep me signed in
+														</span>
+														<button type="submit" class="btn btn-default">Login</button>
+													</form>
+												</div><!--/login form-->
+											</div>
+
+									</div>
+								</section><!--/form-->
+
+						</div>
+				</div>
+			</div>
+
+
+
+    	</div>
+    </div><!--/#contact-page-->
+
+
+{% endblock %}
+
+
+
+

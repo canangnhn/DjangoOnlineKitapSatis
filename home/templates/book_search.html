@@ -1,0 +1,50 @@
+{% extends "homebase.html" %}
+
+{% block title %} Books Search Result{% endblock %}
+{% block keywords %}{{ setting.keywords }}  {% endblock %}
+{% block description %} {{ setting.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">Arama Sonuçları</h2>
+					<div id="gmap" class="contact-map">
+							<table cellpadding="3" width="1200">
+                                <tr>
+                                    <th>Images</th>
+                                    <th>Book</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                </tr>
+                                {% for rs in books %}
+                                <tr>
+                                    <td><a href="/book/{{ rs.id }}/{{ rs.slug }}"> <img src="{{ rs.image.url }}" style="" alt="" height="200"></a> </td>
+                                    <td><h4 class="book-name"><a href="/book/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a> </h4> </td>
+                                    <td><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}"> {{ rs.category }}</a> </td>
+                                    <td><h4>{{ rs.price }}</h4> </td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+					</div>
+				</div>
+
+			</div>
+
+    	</div>
+
+
+
+
+{% endblock %}

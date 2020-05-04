@@ -1,0 +1,33 @@
+{% extends "homebase.html" %}
+
+{% block title %} Referanslarımız-{{ setting.company }} {% endblock %}
+{% block keywords %}{{ setting.keywords }}  {% endblock %}
+{% block description %} {{ setting.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">REFERANSLARIMIZ</h2>
+					{{ setting.references | safe }}
+
+				</div>
+
+			</div>
+
+    	</div>
+
+
+
+
+{% endblock %}

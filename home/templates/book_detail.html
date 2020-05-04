@@ -1,0 +1,224 @@
+{% extends "homebase.html" %}
+
+{% block title %}  {{ book.title}} {% endblock %}
+{% block keywords %}{{	book.keywords }}  {% endblock %}
+{% block description %} {{book.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+{% block sidebar %}     {% include 'sidebar.html' %}    {% endblock %}
+
+{% block content %}
+
+
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-8">
+
+					<div id="gmap" class="contact-map">
+				<div class="col-sm-12 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="{{ book.image.url }}" alt="" />
+								<h3>ZOOM</h3>
+							</div>
+
+
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+								  <!-- Wrapper for slides -->
+
+
+								    <div class="carousel-inner">
+
+										<div class="item active" >
+										  <a href=""><img src="{{ book.image.url }}" alt="" height="150" width="150" ></a>
+										</div>
+{% for rs in images %}
+										<div class="item">
+										  <a href=""><img src="{{ rs.image.url }}" alt="" height="150" width="150" >></a>
+
+										</div>
+{% endfor %}
+
+
+
+									</div>
+
+								  <!-- Controls -->
+								  <a class="left item-control" href="#similar-product" data-slide="prev">
+									<i class="fa fa-angle-left"></i>
+								  </a>
+								  <a class="right item-control" href="#similar-product" data-slide="next">
+									<i class="fa fa-angle-right"></i>
+								  </a>
+							</div>
+
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
+								<h2>{{ book.title }}</h2>
+
+								<img src="images/product-details/rating.png" alt="" />
+								<span>
+									<span>{{ book.price }} $</span>
+									<label>Quantity:</label>
+									<input type="text" value="3" min="0"max="{{ book.amount }}" />
+
+									<button type="button" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i>
+										Add to cart
+									</button>
+								</span>
+								<p><b>Availability:</b> In Stock</p>
+								<p><b>Condition:</b> New</p>
+								<p><b>Brand:</b> E-SHOPPER</p>
+								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li><a href="#details" data-toggle="tab">Details</a></li>
+								<li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade" id="details" >
+								<div class="col-sm-12">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+													<p>{{ book.detail | safe }}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+							<div class="tab-pane fade" id="companyprofile" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery1.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery3.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery2.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery4.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="tab-pane fade active in" id="reviews" >
+							{% for rs in comments%}
+								<div class="col-sm-12">
+
+									<ul>
+										<li><a href=""><i class="fa fa-user"></i>{{ rs.user.first_name }}</a></li>
+										<li><a href=""><i class="fa fa-clock-o"></i>{{ rs.create_at }} PM</a></li>
+										<li><a href=""><i class="fa fa-star checked"></i>{{ rs.rate }}</a></li>
+									</ul>
+									<p>
+										{{ rs.comment }}</p>
+									{% endfor %}
+									<p><b>Write Your Review</b></p>
+									{% if messages %}
+											 {% for message in messages %}
+											<div class="alert alert-{{message.tags}}" role="alert" style="display: none"></div>
+											{{ message }}
+
+										{% endfor %}
+									{% endif %}
+									<form class="review-form" action="/book/addcomment/{{ book.id }}" method="post">
+										{% csrf_token %}
+										<span>
+											<input class="input" type="text" id="id_subject" placeholder="Subject" name="subject"/>
+											<input type="email" placeholder="Email Address"/>
+										</span>
+										<textarea class="input" name="comment" id="id_comment" placeholder="Your Review"></textarea>
+										<b>Rating: </b>
+										<div class="input-rating">
+											<div class="stars">
+												5:<input type="radio" id="star5" name="rate" value="5"/><label for="star5"></label><br>
+												4:<input type="radio" id="star4" name="rate" value="4"/><label for="star4"></label><br>
+												3:<input type="radio" id="star3" name="rate" value="3"/><label for="star3"></label><br>
+												2:<input type="radio" id="star2" name="rate" value="2"/><label for="star2"></label><br>
+												1:<input type="radio" id="star1" name="rate" value="1"/><label for="star1"></label><br>
+											</div>
+										</div>
+										{% if user.id is not None%}
+										 <input type="submit" name="submit" class="btn btn-primary pull-right" value="SEND"></input>
+										{% else %}
+										 Yorum eklemek için <a href="/login"> Login</a> olunuz !
+										{% endif %}
+									</form>
+								</div>
+							</div>
+
+						</div>
+					</div><!--/category-tab-->
+
+					
+				</div>
+
+					</div>
+				</div>
+
+			</div>
+
+    	</div>
+
+
+
+
+{% endblock %}

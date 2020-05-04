@@ -1,0 +1,71 @@
+{% extends "homebase.html" %}
+
+{% block title %} Ürünlerimiz-{{ categorydata.title }} {% endblock %}
+{% block keywords %}{{ categorydata.keywords }}  {% endblock %}
+{% block description %} {{ categorydata.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+    {% block sidebar %}     {% include 'sidebar.html' %}    {% endblock %}
+
+    {% block content %}
+
+
+
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-8">
+					<h2 class="title text-center">{{ categorydata.title }}</h2>
+					<div id="gmap" class="contact-map">
+                        {% for rs in books %}
+
+                    <!----Product Single---->
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="{{ rs.image.url }} " alt="" height="300" />
+                                                <h2>{{ rs.price }}</h2>
+                                                <p>{{ rs.title }}</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </div>
+                                            <div class="product-overlay">
+                                                <div class="overlay-content">
+                                                    <h2>{{ rs.price }}</h2>
+                                                    <p>{{ rs.title }}</p>
+                                                    <a href="/book/{{ rs.id }}/{{ rs.slug }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Görüntüle</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="choose">
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                                <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                          <!----/Product Single---->
+
+
+
+
+
+				</div>
+
+					</div>
+				</div>
+
+
+    	</div>
+
+
+
+
+{% endblock %}

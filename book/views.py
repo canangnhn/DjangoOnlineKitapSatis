@@ -10,7 +10,7 @@ from book.models import CommentForm, Comment
 def index(request):
     text="Merhaba Django";
 
-    return HttpResponse("Product Page")
+    #return HttpResponse("Product Page")
 
 @login_required(login_url='/login')
 

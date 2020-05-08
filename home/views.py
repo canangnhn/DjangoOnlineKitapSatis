@@ -11,15 +11,18 @@ import book
 from book.models import Book, Category, Images, Comment
 from home.form import SearchForm, SignUpForm
 from home.models import Setting, ContactFormMessage, ContactFormu
+from order.models import ShopCart
 
 
 def index(request):
+    current_user=request.user
     setting=Setting.objects.get(pk=1);
     sliderdata = Book.objects.all()[:1]
     category=Category.objects.all()
     daybooks=Book.objects.all()[:3]
     lastbooks = Book.objects.all().order_by('-id')[:4]
     randombooks = Book.objects.all().order_by('?')[:3]
+    request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
 
 
 

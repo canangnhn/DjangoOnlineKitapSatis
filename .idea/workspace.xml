@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8af691b-8dd3-4ab0-991d-00c127c6cb55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/order/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/Shopcart_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/book_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydjangoproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydjangoproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydjangoproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydjangoproject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588890308596</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Sepete ürün ekleme silme ve listeleme işlemleri">
+      <created>1588910073730</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588910073730</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +130,8 @@
     <MESSAGE value="content ve sidebar da duzenlemeler yapıldı" />
     <MESSAGE value="Home'da hakkımızda, iletişim, referanlar sayfaları yapıldı.Kategori, alt kategorisi menu yapıldı,kategorilere göre ürünler listelendi.Ana sayfada ürünler listelendi.Ürün galerisi,yorum ve puan ekleme,ürün arama yapıldı.Login, logout, signup yapıldı.Adminde üye profili ve image yapıldı" />
     <MESSAGE value="Üye paneli ve profil bilgileri kısımları yapıldı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Üye paneli ve profil bilgileri kısımları yapıldı." />
+    <MESSAGE value="Sepete ürün ekleme silme ve listeleme işlemleri" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sepete ürün ekleme silme ve listeleme işlemleri" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="30" key="#Servers" timestamp="1587134199709">
@@ -151,18 +146,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="179" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1588887089537" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1588890305540">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1588910071138">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588890305540" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588910071138" />
     <state x="186" y="14" key="SettingsEditor" timestamp="1587134178308">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="186" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587134178308" />
-    <state x="275" y="105" key="Vcs.Push.Dialog.v2" timestamp="1588890317098">
+    <state x="275" y="105" key="Vcs.Push.Dialog.v2" timestamp="1588910079464">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="105" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588890317098" />
+    <state x="275" y="105" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588910079464" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588904728955">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

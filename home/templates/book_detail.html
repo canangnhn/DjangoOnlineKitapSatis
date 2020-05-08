@@ -41,7 +41,7 @@
 										</div>
 {% for rs in images %}
 										<div class="item">
-										  <a href=""><img src="{{ rs.image.url }}" alt="" height="150" width="150" >></a>
+										  <a href=""><img src="{{ rs.image.url }}" alt="" height="150" width="150" ></a>
 
 										</div>
 {% endfor %}
@@ -60,27 +60,43 @@
 							</div>
 
 						</div>
+
 						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
+							{% if messages %}
+								{% for message in messages %}
+									<div class="alert alert-{{message.tags}}" role="alert" style="display: none"></div>
+									{{ message }}
+
+								{% endfor %}
+							{% endif %}
+							<form action="/order/addtocart/{{ book.id }}" method="post">
+								{% csrf_token%}
+							 <div class="product-information"><!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
 								<h2>{{ book.title }}</h2>
 
 								<img src="images/product-details/rating.png" alt="" />
 								<span>
 									<span>{{ book.price }} $</span>
-									<label>Quantity:</label>
-									<input type="text" value="3" min="0"max="{{ book.amount }}" />
+									<label> Quantity:</label>
+									<input name="quanity" type="number" value="1" min="0"max="{{ book.amount }}" />
 
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
-									</button>
+
 								</span>
 								<p><b>Availability:</b> In Stock</p>
 								<p><b>Condition:</b> New</p>
 								<p><b>Brand:</b> E-SHOPPER</p>
+
+									{% csrf_token%}
+									<button type="submit" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i>
+										Add to cart
+									</button>
+
+
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
+							  </div>
+							</form><!--/product-information-->
 						</div>
 					</div><!--/product-details-->
 

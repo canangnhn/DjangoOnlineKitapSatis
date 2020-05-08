@@ -1,0 +1,113 @@
+{% extends "homebase.html" %}
+
+{% block title %} Shop Cart {% endblock %}
+{% block keywords %}{{ categorydata.keywords }}  {% endblock %}
+{% block description %} {{ categorydata.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    	<div class="col-sm-9 padding-right">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">Shop Cart Product List</h2>
+                    	<section id="cart_items">
+                            <div class="container">
+
+                                <div class="table-responsive cart_info">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr class="cart_menu">
+                                                <td class="image">Item</td>
+                                                <td class="description"></td>
+                                                <td class="price">Price</td>
+                                                <td class="quantity">Quantity</td>
+                                                <td class="total">Total</td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                {% for rs in schopcart %}
+                                                <td class="cart_product">
+                                                    <a href="/book/{{ rs.id }}/{{ rs.slug }}"> <img src="{{ rs.book.image.url }}" style="" alt="" height="100"></a>
+                                                </td>
+                                                <td class="cart_description">
+                                                    {{ rs.book.title }}
+                                                </td>
+                                                <td class="cart_price">
+                                                    <p>{{ rs.price }}</p>
+                                                </td>
+                                                <td class="cart_quantity">
+                                                    <div class="cart_quantity_button">
+                                                        <a class="cart_quantity_up" href=""> + </a>
+                                                        <input class="cart_quantity_input" type="text" name="quantity" value="{{ rs.quantity }}" autocomplete="off" size="2">
+                                                        <a class="cart_quantity_down" href=""> - </a>
+                                                    </div>
+                                                </td>
+                                                <td class="cart_total">
+                                                    <p class="cart_total_price">{{ rs.amount }}</p>
+                                                </td>
+                                                    {% if messages %}
+                                                    {% for message in messages %}
+                                                        <div class="alert alert-{{message.tags}}" role="alert" style="display: none"></div>
+                                                        {{ message }}
+
+                                                    {% endfor %}
+                                                {% endif %}
+                                                <td class="cart_delete">
+                                                    <a class="cart_quantity_delete" href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Delete!Are you sure?')"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+	        </section> <!--/#cart_items-->
+      <section id="do_action">
+		<div class="container" >
+			<div class="heading">
+				<h3>What would you like to do next?</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="total_area">
+						<ul>
+							<li>Cart Sub Total <span>${{ total }}</span></li>
+							<li>Shipping Cost <span>Free Shipping</span></li>
+							<li>Total <span>${{ total }}</span></li>
+						</ul>
+
+							<a class="btn btn-default check_out" href="">Place Order</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#do_action-->
+
+
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+
+    	</div>
+
+
+
+
+{% endblock %}

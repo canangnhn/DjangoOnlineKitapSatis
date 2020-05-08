@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8af691b-8dd3-4ab0-991d-00c127c6cb55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/Shopcart_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/book_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydjangoproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydjangoproject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydjangoproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydjangoproject/urls.py" afterDir="false" />
@@ -51,29 +52,33 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Zm60NGaX6T9UxyVw1zhAId77J1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/order" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Django\mydjangoproject\user" />
-      <recent name="C:\Django\mydjangoproject\user\migrations" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\mydjangoproject\order" />
       <recent name="C:\Django\mydjangoproject\user\templates" />
       <recent name="C:\Django\mydjangoproject\book" />
       <recent name="C:\Django\mydjangoproject\home\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Django\mydjangoproject\user" />
+      <recent name="C:\Django\mydjangoproject\user\migrations" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -103,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588633421906</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Üye paneli ve profil bilgileri kısımları yapıldı.">
+      <created>1588890308596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588890308596</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,9 +132,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="content ve sidebar da duzenlemeler yapıldı" />
     <MESSAGE value="Home'da hakkımızda, iletişim, referanlar sayfaları yapıldı.Kategori, alt kategorisi menu yapıldı,kategorilere göre ürünler listelendi.Ana sayfada ürünler listelendi.Ürün galerisi,yorum ve puan ekleme,ürün arama yapıldı.Login, logout, signup yapıldı.Adminde üye profili ve image yapıldı" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home'da hakkımızda, iletişim, referanlar sayfaları yapıldı.Kategori, alt kategorisi menu yapıldı,kategorilere göre ürünler listelendi.Ana sayfada ürünler listelendi.Ürün galerisi,yorum ve puan ekleme,ürün arama yapıldı.Login, logout, signup yapıldı.Adminde üye profili ve image yapıldı" />
+    <MESSAGE value="Üye paneli ve profil bilgileri kısımları yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Üye paneli ve profil bilgileri kısımları yapıldı." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="30" key="#Servers" timestamp="1587134199709">
@@ -137,29 +151,29 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="179" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1588887089537" />
-    <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1588633416227">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1588890305540">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588633416227" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588890305540" />
     <state x="186" y="14" key="SettingsEditor" timestamp="1587134178308">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="186" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587134178308" />
-    <state x="275" y="105" key="Vcs.Push.Dialog.v2" timestamp="1588633658315">
+    <state x="275" y="105" key="Vcs.Push.Dialog.v2" timestamp="1588890317098">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="105" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588633658315" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588883973521">
+    <state x="275" y="105" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588890317098" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588904728955">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1588883973521" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1588904728955" />
     <state x="494" y="288" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585437626848">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="494" y="288" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1585437626848" />
-    <state x="633" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588556226314">
+    <state x="633" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588892783056">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="633" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1588556226314" />
+    <state x="633" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1588892783056" />
   </component>
 </project>

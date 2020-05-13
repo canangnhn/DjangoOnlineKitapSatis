@@ -1,0 +1,85 @@
+{% extends "homebase.html" %}
+
+{% block title %} User Update {% endblock %}
+{% block keywords %}{{ setting.keywords }}  {% endblock %}
+{% block description %} {{ setting.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div id="contact-page" class="container">
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<div id="gmap" class="contact-map">
+
+	    		<div class="col-sm-3">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center">User Panel</h2>
+						 {% include "user_panel.html" %}
+
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-9">
+	    			<div class="contact-info">
+	    				<h2 class="title text-center">User Update</h2>
+
+							<div class="brands-name">
+                                <ul class="nav nav-pills nav-stacked">
+									<li>
+                                        <img src="{{ user.userprofile.image.url }}"  alt=""  height="150" width="150" >
+									</li>
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <fieldset class="from-group">
+                                            {{ user_form.as_p }}
+                                            {{ profile_form.as_p }}
+
+                                        </fieldset>
+										<li>
+                                        <button type="submit" class="btn btn-fefault cart">
+										<i class=""></i>
+										Update
+										</button></li>
+
+                                    </form>
+
+                                </ul>
+
+
+
+							</div>
+
+
+
+
+
+	    			</div>
+    			</div>
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+    	</div>
+    </div><!--/#contact-page-->
+
+
+
+
+{% endblock %}
+
+
+
+

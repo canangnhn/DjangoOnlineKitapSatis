@@ -35,23 +35,28 @@
 
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><img src="{{ profile.image.url }}"  alt=""  height="150" width="150" ></li>
+									<li>
+										<table>
+											<tr>
+												<th class="text-letf">	<a href="update/">Update Profile</a></a>
+											<a href="password/">Change Password</a></button></th>
+											<td><img src="{{ profile.image.url }}"  alt=""  height="150" width="150" ></td>
+											</tr>
+										</table>
+									</li>
 									<li><a href=""> <span class="pull-right">{{ profile.user_name }}</span>Name Surname</a></li>
 									<li><a href=""> <span class="pull-right">{{ profile.user.email }}</span>Email</a></li>
 									<li><a href=""> <span class="pull-right">{{ profile.phone }}</span>Phone</a></li>
 									<li><a href=""> <span class="pull-right">{{ profile.address }}</span>Address</a></li>
 									<li><a href=""> <span class="pull-right">{{ profile.city }}</span>City</a></li>
 									<li><a href=""> <span class="pull-right">{{ profile.country }}</span>Country</a></li>
-									<li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+
 								</ul>
 							</div>
 
 
 
 
-	    				<address>
-							{{ setting.contact | safe }}
-	    				</address>
 
 	    			</div>
     			</div>

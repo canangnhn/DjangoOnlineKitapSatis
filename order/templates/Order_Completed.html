@@ -1,0 +1,45 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block title %} Order Completed{% endblock %}
+{% block keywords %}{{ categorydata.keywords }}  {% endblock %}
+{% block description %} {{ categorydata.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">Order Completed</h2>
+					<div id="gmap" class="contact-map">
+
+                           <h4> Dear {{ user.first_name }} {{ user.last_name }}</h4>
+
+                            <h4>	 {% if messages %}
+                                                    {% for message in messages %}
+                                                        <div class="alert alert-{{message.tags}}" role="alert" style="display: none"></div>
+                                                        {{ message }}
+    												 {% endfor %}
+                    {% endif %}
+
+    						</h4>
+                        <h4 value="{{ user.ordercode }}" name="ordercode">Order Code:{{ user.ordercode }}</h4>
+					</div>
+				</div>
+
+			</div>
+
+    	</div>
+
+
+
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
-
-{% block title %} Shop Cart {% endblock %}
+{% load static %}
+{% block title %} Order Book {% endblock %}
 {% block keywords %}{{ categorydata.keywords }}  {% endblock %}
 {% block description %} {{ categorydata.description }}  {% endblock %}
 
@@ -15,11 +15,74 @@
 {% block content %}
 
 
-    	<div class="col-sm-9 padding-right">
+    	<div class="col-sm-12 padding-right">
 	    	<div class="row">
 	    		<div class="col-sm-12">
-					<h2 class="title text-center">Shop Cart Product List</h2>
-                    	<section id="cart_items">
+					<h2 class="title text-center">Order Book</h2>
+					 {% if messages %}
+                                                    {% for message in messages %}
+                                                        <div class="alert alert-{{message.tags}}" role="alert" style="display: none"></div>
+                                                        {{ message }}
+    												 {% endfor %}
+                    {% endif %}
+                    			<div class="shopper-informations">
+				<div class="row">
+
+					<div class="col-sm-6">
+
+						<div class="shopper-info">
+							<p>Shipping Details</p>
+
+							<form action="" method="post">
+								{% csrf_token %}
+
+
+									<input type="text" name="first_name" value="{{ user.first_name }}" placeholder="First Name">
+									<input type="text" name="last_name" value="{{ user.last_name }}" placeholder="Last Name">
+									<input type="text" name="address" value="{{ profile.address }}" placeholder="Address">
+									<input type="text" name="phone" value="{{ profile.phone }}" placeholder="Phone">
+									<input type="text" name="country" placeholder="Country" value="{{ profile.country}}" >
+									<select name="city" id="id_city" placeholder="City">
+										<option value="{{ profile.city }}" selected>{{ profile.city }}</option>
+										<option>İstanbul</option>
+										<option>Ankara</option>
+										<option>İzmir</option>
+										<option>Antalya</option>
+
+									</select>
+								<button class="btn btn-primary" type="submit">Complete Order</a></button>
+							</form>
+
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="shopper-info">
+							<p>Bill To</p>
+								<form>
+										<input type="text"  name="total" class="input" readonly value="${{ total }}" placeholder="Total">
+									<input type="text" name="holder" placeholder="Credit Card Holder">
+									<input type="text" name="number" placeholder="Credit Card Number">
+									<input type="text" name="ecpdate" placeholder="Credit Exp Date/Year(mm/yy)">
+									<input type="text" name="secnumber" placeholder="Security Number">
+
+							</form>
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+			<div class="review-payment">
+				<h2>Review & Payment</h2>
+			</div>
+
+			<div class="table-responsive cart_info">
+
+			                	<section id="cart_items">
                             <div class="container">
 
                                 <div class="table-responsive cart_info">
@@ -34,9 +97,11 @@
                                                 <td></td>
                                             </tr>
                                         </thead>
+
                                         <tbody>
+												{% for rs in schopcart %}
                                             <tr>
-                                                {% for rs in schopcart %}
+
                                                 <td class="cart_product">
                                                     <a href="/book/{{ rs.id }}/{{ rs.slug }}"> <img src="{{ rs.book.image.url }}" style="" alt="" height="100"></a>
                                                 </td>
@@ -62,7 +127,7 @@
                                                         {{ message }}
 
                                                     {% endfor %}
-                                                {% endif %}
+                                                	{% endif %}
                                                 <td class="cart_delete">
                                                     <a class="cart_quantity_delete" href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Delete!Are you sure?')"><i class="fa fa-times"></i></a>
                                                 </td>
@@ -94,6 +159,10 @@
 			</div>
 		</div>
 	</section><!--/#do_action-->
+			</div>
+
+		</div>
+	</section> <!--/#cart_items-->
 
 
 

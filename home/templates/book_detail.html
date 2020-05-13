@@ -69,17 +69,18 @@
 
 								{% endfor %}
 							{% endif %}
-							<form action="/order/addtocart/{{ book.id }}" method="post">
-								{% csrf_token%}
+
 							 <div class="product-information"><!--/product-information-->
+								 	<form action="/order/addtocart/{{ book.id }}" method="post">
+								{% csrf_token %}
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
 								<h2>{{ book.title }}</h2>
 
 								<img src="images/product-details/rating.png" alt="" />
 								<span>
 									<span>{{ book.price }} $</span>
-									<label> Quantity:</label>
-									<input name="quanity" type="number" value="1" min="0"max="{{ book.amount }}" />
+									<label class="text-uppercase"> Quantity:</label>
+									<input name="quantity" type="number" value="1" min="0"max="{{ book.amount }}" />
 
 
 								</span>
@@ -87,16 +88,16 @@
 								<p><b>Condition:</b> New</p>
 								<p><b>Brand:</b> E-SHOPPER</p>
 
-									{% csrf_token%}
+
 									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
 
+							   </form><!--/product-information-->
+								 <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							  </div>
-							</form><!--/product-information-->
+							 </div>
 						</div>
 					</div><!--/product-details-->
 
@@ -122,57 +123,6 @@
 
 							</div>
 
-							<div class="tab-pane fade" id="companyprofile" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
 
 
 							<div class="tab-pane fade active in" id="reviews" >
@@ -189,9 +139,9 @@
 									{% endfor %}
 									<p><b>Write Your Review</b></p>
 									{% if messages %}
-											 {% for message in messages %}
+											 {% for ms in messages %}
 											<div class="alert alert-{{message.tags}}" role="alert" style="display: none"></div>
-											{{ message }}
+											{{ ms }}
 
 										{% endfor %}
 									{% endif %}

@@ -1,0 +1,100 @@
+{% extends "homebase.html" %}
+
+{% block title %} Order List {% endblock %}
+{% block keywords %}{{ setting.keywords }}  {% endblock %}
+{% block description %} {{ setting.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div id="contact-page" class="container">
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">Orders</h2>
+					<div id="gmap" class="contact-map">
+
+	    		<div class="col-sm-4">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center">User Panel</h2>
+						 {% include "user_panel.html" %}
+
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-8"><div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+                    <h2 class="title text-center">User Order List</h2>
+						<tr class="cart_menu">
+                            <td class="text-left">Id</td>
+                            <td class="text-left">First name</td>
+                            <td class="text-left">Last name</td>
+                            <td class="text-left">Total</td>
+                            <td class="text-left">Status</td>
+                            <td class="text-left">Date</td>
+                            <td class="text-left">Detail</td>
+                        </tr>
+					</thead>
+					<tbody>
+                    {% for rs in orders%}
+
+
+						<tr>
+
+                            <td class="cart_description">
+								<h4>{{ rs.id }}</h4>
+							</td>
+							<td class="cart_description">
+                                <h4>{{ rs.first_name }}</h4>
+							</td>
+							<td class="cart_price">
+                                <h4>{{ rs.last_name }}</h4>
+							</td>
+							<td class="cart_quantity">
+							<h4>{{ rs.total }}</h4>
+							</td>
+							<td class="cart_total">
+								<h4>{{ rs.status }}</h4>
+							</td>
+                            <td class="cart_total">
+								<h4>{{ rs.create_at }}</h4>
+							</td>
+							<td class="cart_delete">
+								<a class="btn-default" href="/user/orderdetail/{{ rs.id }}">Detay </a>
+							</td>
+						</tr>
+
+                        {% endfor %}
+					</tbody>
+				</table>
+			</div>
+
+	    			</div>
+    			</div>
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+    	</div>
+    </div><!--/#contact-page-->
+
+
+
+
+{% endblock %}
+
+
+
+

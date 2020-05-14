@@ -1,0 +1,102 @@
+{% extends "homebase.html" %}
+
+{% block title %} Order List {% endblock %}
+{% block keywords %}{{ setting.keywords }}  {% endblock %}
+{% block description %} {{ setting.description }}  {% endblock %}
+
+
+{% block head %}
+
+ <link rel="shortcut icon" type='image/x-icon' href='{{setting.icon.url}}'>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div id="contact-page" class="container">
+    	<div class="bg">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+					<h2 class="title text-center">Orders</h2>
+					<div id="gmap" class="contact-map">
+
+	    		<div class="col-sm-4">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center">User Panel</h2>
+						 {% include "user_panel.html" %}
+
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-8">
+                    <h2 class="title text-center">Order Shipping Information</h2>
+
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href=""> <span class="pull-right">{{ order.user_name }}</span>Name Surname</a></li>
+									<li><a href=""> <span class="pull-right">{{ order.phone }}</span>Phone</a></li>
+									<li><a href=""> <span class="pull-right">{{ order.address }}</span>Address</a></li>
+									<li><a href=""> <span class="pull-right">{{ order.city }}</span>City</a></li>
+									<li><a href=""> <span class="pull-right">{{ order.country }}</span>Country</a></li>
+                                    <li><a href=""> <span class="pull-right">{{ order.create_at }}</span>Created at</a></li>
+                                    <li><a href=""> <span class="pull-right">{{ order.status }}</span>Status</a></li>
+                                    <li><a href=""> <span class="pull-right">{{ order.adminnote }}</span>Shipping Info</a></li>
+
+								</ul>
+							</div>
+
+
+	    			<table class="contact-info">
+	    				<h2 class="title text-center">User Order List</h2>
+
+							<div class="brands-name">
+
+                                    <tr>
+                                        <th class="text-left">Id</th>
+                                        <th class="text-left">Book name</th>
+                                        <th class="text-left">Price</th>
+                                        <th class="text-left">Quantity</th>
+                                        <th class="text-left">Amount</th>
+                                        <th class="text-left">Status</th>
+                                        <th class="text-left">Date</th>
+                                    </tr>
+
+                                {% for rs in orderitems %}
+                                <tr>
+                                    <td class="text-left">
+                                          <a href="/book/{{ rs.book_id }}/{{ rs.book.slug}}">
+                                        <img src="{{ rs.book.image.url }}" height="80"> </a></td>
+                                    <td class="text-left">{{ rs.book.title }}</td>
+                                    <td class="text-left">{{ rs.price }}</td>
+                                    <td class="text-left">{{ rs.quantity }}</td>
+                                    <td class="text-left">{{ rs.amount }}</td>
+                                    <td class="text-left">{{ rs.status }}</td>
+                                    <td class="text-left">{{ rs.create_at }}</td>
+                                </tr>
+                                {% endfor %}
+
+                            </div>
+
+                    </table>
+	    			</div>
+    			</div>
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+    	</div>
+    </div><!--/#contact-page-->
+
+
+
+
+{% endblock %}
+
+
+
+

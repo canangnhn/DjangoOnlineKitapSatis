@@ -12,8 +12,9 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = ['user_name', 'phone', 'address','city', 'country', 'image_tag']
 
 class FAQAdmin(admin.ModelAdmin):
-    list_display = ['question','answer','status']
+    list_display = ['ordernumber','question','answer','status']
     list_filter = ['status']
+
 
 admin.site.register(ContactFormMessage,ContactFormMessageAdmin)
 admin.site.register(Setting)

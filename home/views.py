@@ -1,4 +1,5 @@
 import json
+from tkinter import Menu
 from unicodedata import category
 
 from django.contrib import messages
@@ -10,7 +11,7 @@ from django.shortcuts import render
 import book
 from book.models import Book, Category, Images, Comment
 from home.form import SearchForm, SignUpForm
-from home.models import Setting, ContactFormMessage, ContactFormu
+from home.models import Setting, ContactFormMessage, ContactFormu, FAQ
 from order.models import ShopCart
 
 
@@ -189,3 +190,14 @@ def signup_view(request):
                    'form' : form,
                    }
     return render(request, 'signup.html', context)
+
+
+def faq(request):
+    category = Category.objects.all()
+    faq=FAQ.objects.all().order_by('ordernumber')
+    context ={
+        'category':category,
+        'faq':faq,
+
+    }
+    return render(request, 'faq.html', context)

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8af691b-8dd3-4ab0-991d-00c127c6cb55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/templates/user_order_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_orders.html" afterDir="false" />
+    <list default="true" id="f8af691b-8dd3-4ab0-991d-00c127c6cb55" name="Default Changelist" comment="Kullanıcı Bilgilerini ve Şifreyi Güncelleme">
+      <change afterPath="$PROJECT_DIR$/user/templates/user_comments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/templates/Order_Form.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/Order_Form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
@@ -134,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589349292728</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Kullanıcı Bilgilerini ve Şifreyi Güncelleme">
+      <created>1589488967093</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589488967093</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,18 +179,22 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="179" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1588887089537" />
-    <state x="411" y="0" key="CommitChangelistDialog2" timestamp="1589349289804">
+    <state x="411" y="0" key="CommitChangelistDialog2" timestamp="1589489047840">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1589349289804" />
+    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1589489047840" />
+    <state x="129" y="56" key="DiffContextDialog" timestamp="1589489065506">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="129" y="56" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1589489065506" />
     <state x="186" y="14" key="SettingsEditor" timestamp="1587134178308">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="186" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587134178308" />
-    <state x="275" y="105" key="Vcs.Push.Dialog.v2" timestamp="1589349297626">
+    <state x="275" y="105" key="Vcs.Push.Dialog.v2" timestamp="1589489077230">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="105" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1589349297626" />
+    <state x="275" y="105" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1589489077229" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1589479520360">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
